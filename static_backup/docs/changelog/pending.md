@@ -1,0 +1,4 @@
+[11:36] - [collections.html] - Replaced old hardcoded header bottom-border style classes with `.nav-link` and `.nav-link-active`. Injected `.shine-container` to dynamic card template aspect ratio boxes. - To support premium animations and unified styling.
+[11:36] - [product.html] - Replaced old header link styles with `.nav-link`. Added `.shine-container` to the product main display image wrapper and dynamically rendered related product templates. - To align styling and maintain uniform aesthetics.
+[11:36] - [about.html] - Replaced old header link styles with `.nav-link` and `.nav-link-active`. Added `.shine-container` to the editorial layout image wrappers. - To provide cohesive interactive hover reflections.
+[11:37] - [README.md] - Created project documentation covering architecture, file structure, animations, and maintenance guides. - To provide developers and users with a clear system overview.

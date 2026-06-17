@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Naya Florist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <!-- Custom CSS System -->
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed overflow-x-hidden">
+
+    <!-- Header (Shared Navigation) -->
+    <header class="sticky top-0 w-full z-[45] bg-surface/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="grid grid-cols-2 md:grid-cols-3 items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-screen-2xl mx-auto transition-all duration-300 ease-in-out">
+            <!-- Left: Logo -->
+            <div class="flex justify-start">
+                <a class="font-display-lg text-[28px] md:text-3xl font-bold text-primary tracking-tight" href="index.html">Naya Florist</a>
+            </div>
+            <!-- Middle: Nav Links (Centered) -->
+            <div class="hidden md:flex justify-center items-center gap-8 font-body-md text-body-md">
+                <a class="nav-link text-on-surface-variant hover:text-primary transition-colors duration-300"
+                    href="collections.html">Collections</a>
+                <a class="nav-link text-on-surface-variant hover:text-primary transition-colors duration-300"
+                    href="about.html">Our Story</a>
+            </div>
+            <!-- Right: Icons -->
+            <div class="flex justify-end items-center gap-2 md:gap-4">
+                <button class="md:hidden text-primary p-2 flex items-center justify-center" aria-label="Toggle Menu">
+                    <span class="material-symbols-outlined" data-icon="menu">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[75vh] md:min-h-[85vh] flex items-center overflow-hidden bg-surface-bright" id="hero-section">
+            <!-- Falling Petals Canvas Overlay -->
+            <div class="petals-container" id="petals-canvas"></div>
+
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-25 mix-blend-multiply scale-105 animate-kenburns"
+                    alt="Floral background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdu37URkCYQWeimzlxv41ludm22pzD2NmF4b6F_DJxMIhyoASo91x5ZGty5XvdHJAGENr-yrUx7fqMeQ6gPjrXLPYEdGjqGwYGiMOJyOnNmq3tAUb6OgKrafbqsGWsg3zWBWBdKBqzIuCq8pfuu5p32-YfbCuGOxgL2Sp8F924VWF7mi9gXUkkU2tOjV_dk6bpyFlL_hckdMNb1YnfdY38ETxMS8lj7Hl44307M3zQsrBdFKIGhToIKzKPLlMxlHuDNp40fpM-UJ0" />
+                <div class="absolute inset-0 line-art-overlay"></div>
+                <!-- Abstract Geometric Shapes for Depth -->
+                <div
+                    class="absolute top-1/4 -right-20 w-96 h-96 bg-primary-fixed/20 rounded-full blur-[100px] animate-pulse">
+                </div>
+                <div class="absolute bottom-1/4 -left-20 w-80 h-80 bg-secondary-container/20 rounded-full blur-[100px]">
+                </div>
+            </div>
+
+            <!-- Content Container -->
+            <div
+                class="relative z-10 w-full max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 mb-stack-md opacity-0 translate-y-4" id="hero-tag">
+                        <span class="w-8 h-[1px] bg-primary"></span>
+                        <span
+                            class="font-label-caps text-label-caps text-primary uppercase tracking-widest text-[10px] md:text-xs">Handcrafted
+                            Artisanal Silk</span>
+                    </div>
+                    <h1 class="font-display-lg text-[42px] md:text-[56px] text-on-surface mb-stack-lg leading-tight font-semibold opacity-0 translate-y-4"
+                        id="hero-title">
+                        Flowers That <br class="hidden md:block" /> Never Fade
+                    </h1>
+                    <p class="font-body-lg text-lg text-on-surface-variant mb-stack-lg max-w-xl leading-relaxed opacity-0 translate-y-4"
+                        id="hero-text">
+                        Discover the art of everlasting beauty. Handcrafted from premium silk, paper, and preserved
+                        materials. No watering, no wilting, just eternal bloom.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-gutter opacity-0 translate-y-4" id="hero-cta">
+                        <a href="collections.html"
+                            class="bg-primary text-on-primary px-10 py-4 font-label-caps text-xs border border-primary hover:bg-transparent hover:text-primary transition-all duration-500 group flex items-center justify-center gap-2 tracking-widest uppercase font-bold">
+                            Shop Collections
+                            <span
+                                class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                                data-icon="east">east</span>
+                        </a>
+                        <a href="about.html"
+                            class="bg-transparent text-on-surface px-10 py-4 font-label-caps text-xs border border-outline-variant hover:border-primary transition-all duration-500 flex items-center justify-center tracking-widest uppercase font-bold">
+                            Our Process
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Line Art Element -->
+            <div class="absolute bottom-10 right-margin-desktop hidden lg:block animate-float">
+                <div
+                    class="w-40 h-40 border border-primary/20 rounded-full flex items-center justify-center p-8 backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-[56px] text-primary/30"
+                        data-icon="local_florist">local_florist</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Propositions (Minimalist Line Art) -->
+        <section class="bg-surface py-12 border-t border-b border-outline-variant/20">
+            <div class="max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-4">
+                    <div class="flex flex-col items-center gap-stack-sm">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-1"
+                            data-icon="architecture">architecture</span>
+                        <h3 class="font-label-caps text-xs text-on-surface uppercase tracking-wider font-bold">
+                            Handcrafted</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant max-w-xs">Meticulously sculpted by master
+                            florists</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center gap-stack-sm border-y md:border-y-0 md:border-x border-outline-variant/30 py-6 md:py-0">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-1"
+                            data-icon="local_shipping">local_shipping</span>
+                        <h3 class="font-label-caps text-xs text-on-surface uppercase tracking-wider font-bold">Local
+                            Delivery</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant max-w-xs">Based in Tangerang, shipping to
+                            Jabodetabek</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-stack-sm">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-1" data-icon="eco">eco</span>
+                        <h3 class="font-label-caps text-xs text-on-surface uppercase tracking-wider font-bold">
+                            Eco-Friendly</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant max-w-xs">Sustainable materials for a
+                            greener home</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections (Editorial Grid Hint) -->
+        <section class="py-24 bg-background">
+            <div class="max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="text-center mb-16 opacity-0 translate-y-4">
+                    <h2 class="font-headline-md text-3xl md:text-4xl text-on-surface mb-2 font-semibold">The Curated
+                        Gallery</h2>
+                    <p class="font-body-md text-on-surface-variant">A selection of our most loved everlasting
+                        arrangements</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter lg:gap-12">
+                    <!-- Product Card 1 (Parisian Morning) -->
+                    <div onclick="window.location.href='product.html?id=9'"
+                        class="group cursor-pointer opacity-0 translate-y-4">
+                        <div
+                            class="aspect-[4/5] overflow-hidden bg-surface-container mb-stack-md relative soft-bloom-shadow rounded-sm shine-container">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                alt="The Parisian Morning"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnVafhubQAYrZ7fdh7AwOl80fzlSH_61dgwwvX1niYGLOk7S-E19rjyPGmIR5s6gyhCUiZjtEfsKtN8U3ri2GBbvyX0GSmhXT8SEZdqNnQ-evxrguVC-qBXRP58V9et-P4_eQxXkOykdS8kMH9RZQ0iyPu8j0_4H_x70HAgjQBvjVLXd0bctrIgGRNZC2lsu2bDJua6cxquVt6puzMKsrGM-b9Vg3uJkPhf90o42d9m47EdEd2NRXZpBKNCYpUUNh9PnRxUoF6Vzs" />
+                            <div
+                                class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="font-label-caps text-[10px] text-secondary tracking-widest uppercase mb-1 block">Silk
+                                Series</span>
+                            <h4
+                                class="font-display-lg text-[22px] text-on-surface mb-2 hover:text-primary transition-colors">
+                                The Parisian Morning</h4>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 (Desert Serenity - Asymmetric shift) -->
+                    <div onclick="window.location.href='product.html?id=10'"
+                        class="group cursor-pointer md:mt-16 lg:mt-12 opacity-0 translate-y-4">
+                        <div
+                            class="aspect-[4/5] overflow-hidden bg-surface-container mb-stack-md relative soft-bloom-shadow rounded-sm shine-container">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                alt="Desert Serenity"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZCVze5kQl-vrKH3SSUa5QldCPZNsxwTz04ZcmZOJ09A47TgP3Na_TEeUpqErx9UxXve9AsvqH7_iiBvpadz-d0RJFpSRJZVaLOSaZH4_oOZXUrPi4QvyiNOYf6YCk23y_BtqcWuUwP4ayq4I4j9G4mt6I4eabAsSct4NEyIGIkBsFABkP1DDa8pKYX97HJ6kFWJpzRgeKYh4Akspxs-1FMH_4Jgjq0Ttopl2nv1Y5h-1CRaCJ8lz-SjP2dv2pEKg3CHdsuLM7Kqs" />
+                            <div
+                                class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="font-label-caps text-[10px] text-secondary tracking-widest uppercase mb-1 block">Preserved
+                                Collection</span>
+                            <h4
+                                class="font-display-lg text-[22px] text-on-surface mb-2 hover:text-primary transition-colors">
+                                Desert Serenity</h4>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 (Midnight Bloom) -->
+                    <div onclick="window.location.href='product.html?id=11'"
+                        class="group cursor-pointer opacity-0 translate-y-4">
+                        <div
+                            class="aspect-[4/5] overflow-hidden bg-surface-container mb-stack-md relative soft-bloom-shadow rounded-sm shine-container">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                alt="Midnight Bloom"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO6JkrbazBLSF9ZOf_jvwaHnPQY0zFKA-bsUx83xJra7XmteWMxlS9VYEakRL0lp9RWLDqoeH0RuEb7FJd-pxmTYlchNF1HQH0xa6FnnuG0VbbltyqehzJXx9Ur-JIbQU9uRM_egbxssjEg-GxMZPbQDPOID_3bYojo3khRTiu6SzUwIFiCbzCtVoi35L3uH8BK1C29ZdRc8du-iZOA9ze8Kzo5WDdEfgGgnc4twJKI_H6YMo4_in_AR1KmXd8WsUaaS8Yp1Wjez4" />
+                            <div
+                                class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <span
+                                class="font-label-caps text-[10px] text-secondary tracking-widest uppercase mb-1 block">Paper
+                                Couture</span>
+                            <h4
+                                class="font-display-lg text-[22px] text-on-surface mb-2 hover:text-primary transition-colors">
+                                Midnight Bloom</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-20 opacity-0 translate-y-4">
+                    <a href="collections.html"
+                        class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-12 py-4 font-label-caps text-xs uppercase tracking-widest font-bold transition-all duration-300 rounded shadow-sm">
+                        View Entire Catalog
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Shared Component) -->
+    <footer class="bg-surface-container-low border-t border-outline-variant/30 w-full mt-auto">
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-12 px-margin-mobile md:px-margin-desktop py-16 max-w-screen-2xl mx-auto">
+            <div class="space-y-4">
+                <span class="font-display-lg text-2xl font-bold text-primary block">Naya Florist</span>
+                <p class="text-on-surface-variant font-body-md text-sm leading-relaxed max-w-sm">Eternal arrangements
+                    for the modern home. Bringing timeless beauty to your space with zero maintenance.</p>
+            </div>
+            <div class="space-y-4 md:pl-12">
+                <h4 class="font-label-caps text-xs text-primary uppercase font-bold tracking-widest">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant font-body-md">
+                    <li><a class="hover:text-primary transition-colors" href="collections.html">Collections</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="about.html">Our Story</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Care Guide</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-caps text-xs text-primary uppercase font-bold tracking-widest">Instagram</h4>
+                <p class="text-on-surface-variant font-body-md text-sm leading-relaxed max-w-sm">Follow our daily
+                    journey and everlasting creations.</p>
+                <a href="https://www.instagram.com/naya_florist.tangerang/" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-primary hover:text-tertiary transition-all duration-300 font-label-caps text-xs uppercase tracking-widest font-bold border-b border-primary/20 pb-1 hover:border-primary">
+                    <span>@naya_florist.tangerang</span>
+                    <span class="material-symbols-outlined text-[16px]">east</span>
+                </a>
+            </div>
+        </div>
+        <div
+            class="border-t border-outline-variant/20 py-6 px-margin-mobile md:px-margin-desktop text-center text-xs text-on-surface-variant/70">
+            <p>© 2026 Naya Florist. Eternal Bloom.</p>
+        </div>
+    </footer>
+
+    <!-- Products Database -->
+    <script src="js/products.js"></script>
+    <!-- WhatsApp Consultation -->
+    <script src="js/whatsapp.js"></script>
+    <!-- Page Interaction Controller -->
+    <script src="js/main.js"></script>
+    <!-- Custom Scroll reveals trigger animation on load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero elements load sequence
+            const ids = ['hero-tag', 'hero-title', 'hero-text', 'hero-cta'];
+            ids.forEach((id, index) => {
+                const el = document.getElementById(id);
+                if (el) {
+                    setTimeout(() => {
+                        el.classList.remove('opacity-0', 'translate-y-4');
+                        el.classList.add('opacity-100', 'translate-y-0');
+                        el.style.transition = 'all 1.0s cubic-bezier(0.16, 1, 0.3, 1)';
+                    }, 150 * (index + 1));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
